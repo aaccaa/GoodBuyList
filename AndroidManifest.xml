@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="us.zhoujing.goodbuylist"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="9"
+        android:targetSdkVersion="18" />
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="True"
+        android:icon="@drawable/icon" >
+        <activity
+            android:name="us.zhoujing.goodbuylist.MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="us.zhoujing.goodbuylist.ProductActivity"
+            android:label="@string/title_activity_product" >
+        </activity>
+        <activity
+            android:name="us.zhoujing.goodbuylist.UserActivity"
+            android:label="@string/title_activity_user_actvity" >
+        </activity>
+        <activity
+            android:name="us.zhoujing.goodbuylist.SignFacebookActivity"
+            android:label="@string/title_activity_sign_facebook" >
+        </activity>
+        <activity
+            android:name="us.zhoujing.goodbuylist.SignInActivity"
+            android:label="@string/title_activity_sign_in" >
+        </activity>
+        <activity
+            android:name="us.zhoujing.goodbuylist.SearchActivity"
+            android:label="@string/title_activity_search" >
+        </activity>
+        <activity
+            android:name="us.zhoujing.goodbuylist.SignInDoneActivity"
+            android:label="@string/title_activity_sign_in_done" >
+        </activity>
+    </application>
+
+</manifest>

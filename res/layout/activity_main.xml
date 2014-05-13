@@ -1,0 +1,102 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:gravity="top|center"
+    android:orientation="vertical" >
+
+<RelativeLayout 
+    android:layout_width="match_parent"
+    android:layout_height="40dp"
+    
+    android:background="@drawable/icons11"
+    >
+    
+            <ImageButton
+            android:id="@+id/imageButton4"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_weight="1"
+            android:layout_marginLeft="1dp"
+            android:layout_marginRight="1dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginBottom="3dp"
+            android:adjustViewBounds="true"
+            android:padding="0dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/icons5" 
+           
+            />
+
+        <ImageButton
+            android:id="@+id/imageButton3"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_toLeftOf="@+id/imageButton4"
+            android:layout_weight="1"
+            android:layout_marginLeft="1dp"
+            android:layout_marginRight="1dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginBottom="3dp"
+            
+            android:adjustViewBounds="true"
+            android:padding="0dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/icons3" />
+    
+    </RelativeLayout>
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:adjustViewBounds="true"
+    android:gravity="top|center"
+    android:background="@drawable/background3"
+    android:orientation="vertical">
+    
+    <EditText
+        android:id="@+id/editTextUserName1"
+        
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:hint="  username"
+        android:ems="10"
+        android:layout_marginTop = "80dp"
+        android:background="@drawable/round_edit" />
+       
+
+
+    <EditText
+        android:id="@+id/editTextPassword1"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:hint=" password"
+        android:ems="10"
+        android:inputType="textPassword" 
+        android:background="@drawable/round_edit"
+       />
+
+
+    <ImageButton
+        android:id="@+id/imageButton1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/icons4" 
+        android:layout_marginTop = "50dp"
+        android:layout_marginLeft = "50dp"
+        android:layout_marginRight = "50dp"
+        android:adjustViewBounds="true"
+            android:padding="0dp"
+            android:scaleType="fitCenter"
+             android:onClick="signNow"
+            />
+
+   
+</LinearLayout>
+
+   
+</LinearLayout>
