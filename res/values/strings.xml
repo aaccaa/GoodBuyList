@@ -135,5 +135,11 @@
     <string name="title_activity_sign_in">SignInActivity</string>
     <string name="title_activity_search">SearchActivity</string>
     <string name="title_activity_sign_in_done">SignInDoneActivity</string>
+    <string name="title_peopleactivity_list">peopleListActivity</string>
+    <string name="title_peopleactivity_detail">peopleActivity Detail</string>
+    <string name="title_activity_people">PeopleActivity</string>
+    <string name="title_activity_favorite">FavoriteActivity</string>
+    <string name="title_activity_newsfeed">NewsfeedActivity</string>
+    <string name="title_activity_purchase">PurchaseActivity</string>
 
 </resources>

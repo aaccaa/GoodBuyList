@@ -1,0 +1,119 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".FavoriteActivity" >
+    
+        <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@drawable/list" >
+
+        <ImageButton
+            android:id="@+id/imageButton4"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginBottom="3dp"
+            android:layout_marginLeft="1dp"
+            android:layout_marginRight="2dp"
+            android:layout_marginTop="3dp"
+            android:adjustViewBounds="true"
+            android:padding="0dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/icons5" />
+
+        <ImageButton
+            android:id="@+id/imageButton3"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginBottom="3dp"
+            android:layout_marginLeft="1dp"
+            android:layout_marginRight="0dp"
+            android:layout_marginTop="3dp"
+            android:layout_toLeftOf="@+id/imageButton4"
+            android:adjustViewBounds="true"
+            android:padding="0dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/icons3" />
+
+        <ImageButton
+            android:id="@+id/imageButton2"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginBottom="3dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginRight="1dp"
+            android:layout_marginTop="3dp"
+            android:layout_toRightOf="@+id/imageButton1"
+            android:adjustViewBounds="true"
+            android:padding="0dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/icons2" />
+
+        <ImageButton
+            android:id="@+id/imageButton1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginBottom="3dp"
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="1dp"
+            android:layout_marginTop="3dp"
+            android:adjustViewBounds="true"
+            android:onClick="backPre"
+            android:padding="0dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/icons1" />
+    </RelativeLayout>
+    
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="#b0cf53"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/btfavoriteproduct"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="onSelectFragment"
+            android:text="Product List" 
+            android:textColor="#006203"
+        android:textStyle="italic"
+         android:typeface="serif"
+        />
+
+        <Button
+            android:id="@+id/btfavoriteuser"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="onSelectFragment"
+            android:text="User List" 
+            android:textColor="#006203"
+        android:textStyle="italic"
+       android:typeface="serif"
+        />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/fragment_holder_favorite"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background_4"
+        android:orientation="vertical" >
+    </LinearLayout>
+
+</LinearLayout>

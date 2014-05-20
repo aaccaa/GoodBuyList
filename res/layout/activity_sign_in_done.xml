@@ -2,43 +2,29 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" 
-    android:background="#664e25">
+    android:background="#664e25"
+    android:orientation="vertical" >
 
-    <RelativeLayout 
-    android:layout_width="match_parent"
-    android:layout_height="40dp"
-    android:background="@drawable/icons11"
-    
-    >
-
-        <TextView
-            android:id="@+id/textView1"
-            style="@style/CodeFont"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_centerInParent="true"
-            android:layout_gravity="center"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:text="" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@drawable/icons11" >
 
         <ImageButton
             android:id="@+id/imageButton4"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_alignParentBottom="true"
-            android:layout_alignParentTop="true"
             android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginBottom="3dp"
             android:layout_marginLeft="1dp"
             android:layout_marginRight="2dp"
             android:layout_marginTop="3dp"
-            android:layout_marginBottom="3dp"
             android:adjustViewBounds="true"
+            android:padding="0dp"
             android:scaleType="fitCenter"
-            android:src="@drawable/icons5" 
-            android:padding="0dp"           
-            />
+            android:src="@drawable/icons5" />
 
         <ImageButton
             android:id="@+id/imageButton3"
@@ -46,27 +32,28 @@
             android:layout_height="match_parent"
             android:layout_alignParentBottom="true"
             android:layout_alignParentTop="true"
-            android:layout_toLeftOf="@+id/imageButton4"            
+            android:layout_marginBottom="3dp"
             android:layout_marginLeft="1dp"
             android:layout_marginRight="0dp"
             android:layout_marginTop="3dp"
-            android:layout_marginBottom="3dp"
+            android:layout_toLeftOf="@+id/imageButton4"
             android:adjustViewBounds="true"
             android:padding="0dp"
             android:scaleType="fitCenter"
-            android:src="@drawable/icons3" />
+            android:src="@drawable/icons3"
+            android:onClick="searchproduct" />
 
         <ImageButton
             android:id="@+id/imageButton2"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_alignParentBottom="true"
-            android:layout_alignParentTop="true"  
-            android:layout_toRightOf="@+id/imageButton1"
+            android:layout_alignParentTop="true"
+            android:layout_marginBottom="3dp"
             android:layout_marginLeft="0dp"
             android:layout_marginRight="1dp"
             android:layout_marginTop="3dp"
-            android:layout_marginBottom="3dp"
+            android:layout_toRightOf="@+id/imageButton1"
             android:adjustViewBounds="true"
             android:padding="0dp"
             android:scaleType="fitCenter"
@@ -79,65 +66,60 @@
             android:layout_alignParentBottom="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
+            android:layout_marginBottom="3dp"
             android:layout_marginLeft="3dp"
             android:layout_marginRight="1dp"
             android:layout_marginTop="3dp"
-            android:layout_marginBottom="3dp"
             android:adjustViewBounds="true"
+            android:onClick="backPre"
             android:padding="0dp"
             android:scaleType="fitCenter"
-            android:src="@drawable/icons1"
-            android:onClick="backPre" />
-    
- </RelativeLayout>
- 
-<RelativeLayout 
-    android:layout_width="match_parent"
-    android:layout_height="2dp"
-    android:background="#503d1c"    
-    >
-</RelativeLayout>
-    
- 
-			
-                <ImageButton
-            android:id="@+id/imageButton5"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:src="@drawable/shoppingcart" 
-            android:adjustViewBounds="true"
-            android:padding="0dp"
-            android:scaleType="fitCenter"
-            />
-        
-                        <ImageButton
-            android:id="@+id/imageButton5"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:src="@drawable/myprofile" 
-            android:adjustViewBounds="true"
-            android:padding="0dp"
-            android:scaleType="fitCenter"
-            android:onClick="useract"
- 
-            />
+            android:src="@drawable/icons1" />
+    </RelativeLayout>
 
-    <RelativeLayout 
-    android:layout_width="match_parent"
-    android:layout_height="2dp"
-    android:background="#503d1c"    
-    >
-     </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#503d1c" >
+    </RelativeLayout>
 
     <ImageButton
         android:id="@+id/imageButton5"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:adjustViewBounds="true"
+        android:padding="0dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/shoppingcart"
+         android:onClick="newsfeed" />
+
+    <ImageButton
+        android:id="@+id/imageButton5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:onClick="useract"
+        android:padding="0dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/myprofile" />
+
+    <ImageButton
+        android:id="@+id/imageButton5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:onClick="peopleact"
         android:padding="0dp"
         android:scaleType="fitCenter"
         android:src="@drawable/people" />
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#8c7a5c" >
+    </RelativeLayout>
+
+    
     <ImageButton
         android:id="@+id/imageButton5"
         android:layout_width="match_parent"
@@ -145,27 +127,26 @@
         android:adjustViewBounds="true"
         android:padding="0dp"
         android:scaleType="fitCenter"
+        android:onClick="favoriteact"
         android:src="@drawable/favoritelist" />
-                        
-                                <ImageButton
-            android:id="@+id/imageButton5"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:src="@drawable/purchaselist" 
-            android:adjustViewBounds="true"
-            android:padding="0dp"
-            android:scaleType="fitCenter"
-            />
-           
-             <ImageButton
-            android:id="@+id/imageButton5"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:src="@drawable/createlist" 
-            android:adjustViewBounds="true"
-            android:padding="0dp"
-            android:scaleType="fitCenter"
-            />
-                                                                
+
+    <ImageButton
+        android:id="@+id/imageButton5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:padding="0dp"
+        android:scaleType="fitCenter"
+        android:onClick="purchaselist"
+        android:src="@drawable/purchaselist" />
+
+    <ImageButton
+        android:id="@+id/imageButton5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:padding="0dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/createlist" />
 
 </LinearLayout>

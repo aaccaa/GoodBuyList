@@ -24,6 +24,31 @@ public class SignInDoneActivity extends Activity {
 		Intent intent3 = new Intent(getApplicationContext(), UserActivity.class);
 		startActivity(intent3);
 	}
+	
+	public void peopleact(View view) {
+		Intent intent3 = new Intent(getApplicationContext(), PeopleActivity.class);
+		startActivity(intent3);
+	}
+
+	public void favoriteact(View view) {
+		Intent intent3 = new Intent(getApplicationContext(), FavoriteActivity.class);
+		startActivity(intent3);
+	}
+
+	public void newsfeed(View view) {
+		Intent intent3 = new Intent(getApplicationContext(), NewsfeedActivity.class);
+		startActivity(intent3);
+	}
+	
+	public void purchaselist(View view) {
+		Intent intent3 = new Intent(getApplicationContext(), PurchaseActivity.class);
+		startActivity(intent3);
+	}
+	
+	public void searchproduct(View view) {
+		Intent intent3 = new Intent(getApplicationContext(), SearchActivity.class);
+		startActivity(intent3);
+	}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {

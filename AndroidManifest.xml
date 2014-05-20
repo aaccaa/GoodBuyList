@@ -47,6 +47,38 @@
             android:name="us.zhoujing.goodbuylist.SignInDoneActivity"
             android:label="@string/title_activity_sign_in_done" >
         </activity>
+        <activity
+            android:name="us.zhoujing.goodbuylist.peopleActivityListActivity"
+            android:label="@string/title_peopleactivity_list"
+            android:parentActivityName="android.support.v4.app.FragmentActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="android.support.v4.app.FragmentActivity" />
+        </activity>
+        <activity
+            android:name="us.zhoujing.goodbuylist.peopleActivityDetailActivity"
+            android:label="@string/title_peopleactivity_detail"
+            android:parentActivityName=".peopleActivityListActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".peopleActivityListActivity" />
+        </activity>
+        <activity
+            android:name="us.zhoujing.goodbuylist.PeopleActivity"
+            android:label="@string/title_activity_people" >
+        </activity>
+        <activity
+            android:name="us.zhoujing.goodbuylist.FavoriteActivity"
+            android:label="@string/title_activity_favorite" >
+        </activity>
+        <activity
+            android:name="us.zhoujing.goodbuylist.NewsfeedActivity"
+            android:label="@string/title_activity_newsfeed" >
+        </activity>
+        <activity
+            android:name="us.zhoujing.goodbuylist.PurchaseActivity"
+            android:label="@string/title_activity_purchase" >
+        </activity>
     </application>
 
 </manifest>
