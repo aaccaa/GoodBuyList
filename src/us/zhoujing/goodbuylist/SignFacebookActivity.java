@@ -15,13 +15,13 @@ public class SignFacebookActivity extends Activity {
 	}
 
 	public void signIn(View view) {
-		Intent intent1 = new Intent(getApplicationContext(), UserActivity.class);
+		Intent intent1 = new Intent(getApplicationContext(), SignInDoneActivity.class);
 		startActivity(intent1);
 	}
 	
 	
 	public void backPre(View view) {
-		Intent intent3 = new Intent(getApplicationContext(), MainActivity.class);
+		Intent intent3 = new Intent(getApplicationContext(), SignInActivity.class);
 		startActivity(intent3);
 	}
 

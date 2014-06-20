@@ -2,101 +2,142 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
     android:gravity="top|center"
     android:orientation="vertical" >
 
-<RelativeLayout 
-    android:layout_width="match_parent"
-    android:layout_height="40dp"
-    
-    android:background="@drawable/icons11"
-    >
-    
-            <ImageButton
-            android:id="@+id/imageButton4"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentRight="true"
-            android:layout_weight="1"
-            android:layout_marginLeft="1dp"
-            android:layout_marginRight="1dp"
-            android:layout_marginTop="3dp"
-            android:layout_marginBottom="3dp"
-            android:adjustViewBounds="true"
-            android:padding="0dp"
-            android:scaleType="fitCenter"
-            android:src="@drawable/icons5" 
-           
-            />
-
-        <ImageButton
-            android:id="@+id/imageButton3"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_alignParentBottom="true"
-            android:layout_toLeftOf="@+id/imageButton4"
-            android:layout_weight="1"
-            android:layout_marginLeft="1dp"
-            android:layout_marginRight="1dp"
-            android:layout_marginTop="3dp"
-            android:layout_marginBottom="3dp"
-            
-            android:adjustViewBounds="true"
-            android:padding="0dp"
-            android:scaleType="fitCenter"
-            android:src="@drawable/icons3" />
-    
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@drawable/goodbuylist_bar" >
     </RelativeLayout>
 
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:adjustViewBounds="true"
-    android:gravity="top|center"
-    android:background="@drawable/background3"
-    android:orientation="vertical">
-    
-    <EditText
-        android:id="@+id/editTextUserName1"
-        
-        android:layout_width="250dp"
-        android:layout_height="50dp"
-        android:hint="  username"
-        android:ems="10"
-        android:layout_marginTop = "80dp"
-        android:background="@drawable/round_edit" />
-       
-
-
-    <EditText
-        android:id="@+id/editTextPassword1"
-        android:layout_width="250dp"
-        android:layout_height="50dp"
-        android:hint=" password"
-        android:ems="10"
-        android:inputType="textPassword" 
-        android:background="@drawable/round_edit"
-       />
-
-
-    <ImageButton
-        android:id="@+id/imageButton1"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:src="@drawable/icons4" 
-        android:layout_marginTop = "50dp"
-        android:layout_marginLeft = "50dp"
-        android:layout_marginRight = "50dp"
-        android:adjustViewBounds="true"
+        android:layout_height="340dp"
+        android:layout_marginBottom="0dp"
+        android:background="@drawable/background_gradient"
+        android:gravity="top|center"
+        android:orientation="vertical" >
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="199dp"
+            android:layout_height="40dp"
+            android:layout_marginBottom="0dp"
+            android:layout_marginTop="15dp"
+            android:src="@drawable/letstart_letters" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="267dp"
+            android:layout_height="30dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="0dp"
+            android:src="@drawable/lookingfor_letters" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginBottom="0dp"
+            android:layout_marginTop="0dp" >
+
+            <EditText
+                android:id="@+id/editTextPassword1"
+                android:layout_width="200dp"
+                android:layout_height="60dp"
+                android:layout_marginLeft="15dp"
+                android:background="@drawable/round_edit"
+                android:ems="20"
+                android:hint="  Products, Lists, Users... " />
+
+            <ImageButton
+                android:id="@+id/imageButton2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="3dp"
+                android:layout_marginLeft="1dp"
+                android:layout_marginRight="1dp"
+                android:layout_marginTop="3dp"
+                android:layout_toRightOf="@+id/editTextPassword1"
+                android:adjustViewBounds="true"
+                android:onClick="searchNow"
+                android:padding="0dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/search_button" />
+
+            <ImageButton
+                android:id="@+id/imageButton3"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="3dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="1dp"
+                android:layout_marginTop="3dp"
+                android:layout_toRightOf="@+id/imageButton2"
+                android:adjustViewBounds="true"
+                android:onClick="scanNow"
+                android:padding="0dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/search_green_button" />
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/recentseen_letters" />
+
+        <ListView
+            android:id="@+id/listView1"
+            android:layout_width="match_parent"
+            android:layout_height="120dp" >
+        </ListView>
+
+        <ImageButton
+            android:id="@+id/imageButton1"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginBottom="1dp"
+            android:layout_marginTop="1dp"
+            android:adjustViewBounds="true"
+            android:onClick="signNow"
             android:padding="0dp"
             android:scaleType="fitCenter"
-             android:onClick="signNow"
-            />
+            android:src="@drawable/seemore_button" />
+    </LinearLayout>
 
-   
-</LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginTop="0dp"
+        android:background="@drawable/background_brown"
+        android:orientation="vertical" >
 
-   
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:layout_marginTop="5dp"
+            android:adjustViewBounds="true"
+            android:padding="0dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/lovewhatsee_letters" />
+
+        <ImageButton
+            android:id="@+id/imageButton4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:layout_marginTop="5dp"
+            android:adjustViewBounds="true"
+            android:onClick="signNow"
+            android:padding="0dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/signupforfree_button" />
+    </LinearLayout>
+
 </LinearLayout>

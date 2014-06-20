@@ -2,53 +2,49 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
+    android:background="#4d63a8"
     android:gravity="top|center"
     android:orientation="vertical" >
 
-
     <TextView
         android:id="@+id/textView2"
+        style="@style/CodeFont"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Sign Up by Facebook"
-        style="@style/CodeFont"
         android:textAppearance="?android:attr/textAppearanceLarge" />
-
 
     <EditText
         android:id="@+id/editText2"
         android:layout_width="250dp"
         android:layout_height="40dp"
-        android:ems="10" 
-        android:hint="  username"
-        android:background="@drawable/round_edit"/>
-
+        android:background="@drawable/round_edit"
+        android:ems="10"
+        android:hint="  username" />
 
     <EditText
         android:id="@+id/editText1"
         android:layout_width="250dp"
         android:layout_height="40dp"
-        android:ems="10" 
-        android:hint="  password"
-        android:background="@drawable/round_edit"/>
-
+        android:background="@drawable/round_edit"
+        android:ems="10"
+        android:hint="  password" />
 
     <Button
         android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="signIn"
         android:text="Sign In" 
-                android:onClick="signIn"/>
         />
+        
 
-        <Button
+    <Button
         android:id="@+id/button4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Back" 
-                android:onClick="backPre"/>
+        android:onClick="backPre"
+        android:text="Back" />
         />
-    
-   
+
 </LinearLayout>

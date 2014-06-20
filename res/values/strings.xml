@@ -141,5 +141,6 @@
     <string name="title_activity_favorite">FavoriteActivity</string>
     <string name="title_activity_newsfeed">NewsfeedActivity</string>
     <string name="title_activity_purchase">PurchaseActivity</string>
+    <string name="_id_edittextpassword1">\@+id/editTextPassword1</string>
 
 </resources>
