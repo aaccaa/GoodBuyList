@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
+    <string name="settings">Settings</string>
+	<string name="app_id">532519433541991</string>
     <string name="app_name">GoodBuyList</string>
     <string name="str_iv_pic">Pic</string>
     <string name="action_settings">Settings</string>
@@ -142,5 +143,6 @@
     <string name="title_activity_newsfeed">NewsfeedActivity</string>
     <string name="title_activity_purchase">PurchaseActivity</string>
     <string name="_id_edittextpassword1">\@+id/editTextPassword1</string>
+    <string name="title_activity_splash_fragment">SplashFragment</string>
 
 </resources>

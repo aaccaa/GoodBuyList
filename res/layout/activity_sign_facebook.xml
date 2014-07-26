@@ -5,7 +5,21 @@
     android:background="#4d63a8"
     android:gravity="top|center"
     android:orientation="vertical" >
-
+    
+    <fragment android:name="us.zhoujing.goodbuylist.SelectionFragment"
+          android:id="@+id/selectionFragment"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent" />
+    <fragment android:name="us.zhoujing.goodbuylist.SplashFragment"
+          android:id="@+id/splashFragment"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent" />
+    
+        <fragment android:name="com.facebook.widget.UserSettingsFragment"
+          android:id="@+id/userSettingsFragment"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent" />
+<!--  
     <TextView
         android:id="@+id/textView2"
         style="@style/CodeFont"
@@ -46,5 +60,7 @@
         android:onClick="backPre"
         android:text="Back" />
         />
+-->
 
+	
 </LinearLayout>

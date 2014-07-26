@@ -1,11 +1,20 @@
 package us.zhoujing.goodbuylist;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
+
 import us.zhoujing.goodbuylist.R;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
 import android.util.Log;
 import android.view.View;
+import android.widget.ListView;
 
 public class MainActivity extends Activity {
 
@@ -13,7 +22,6 @@ public class MainActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-
 	}
 
 	public void scanNow(View view) {
@@ -44,6 +52,7 @@ public class MainActivity extends Activity {
 
 	}
 
+	//For barcode scanning feature
 	public void onActivityResult(int requestCode, int resultCode, Intent intent) {
 		if (requestCode == 0) {
 			if (resultCode == RESULT_OK) {
