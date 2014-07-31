@@ -156,10 +156,10 @@ public class ProductActivity extends Activity {
 			}
 
 			// Keys used in Hashmap
-			String[] from = { "pic", "details" };
+			String[] from = { "pic"};
 
 			// Ids of views in listview_layout
-			int[] to = { R.id.iv_pic, R.id.tv_product_details };
+			int[] to = { R.id.iv_pic };
 
 			// Instantiating an adapter to store each items
 			// R.layout.listview_layout defines the layout of each item

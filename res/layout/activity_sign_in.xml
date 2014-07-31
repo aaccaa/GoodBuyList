@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:background="@drawable/goodbuylist_bar" >
-
+<!-- 
         <ImageButton
             android:id="@+id/imageButton4"
             android:layout_width="wrap_content"
@@ -39,6 +39,7 @@
             android:padding="0dp"
             android:scaleType="fitCenter"
             android:src="@drawable/search_button" />
+             -->
     </RelativeLayout>
 
     <LinearLayout
@@ -81,7 +82,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:adjustViewBounds="true"
-            android:onClick="signNow"
+            android:onClick="signIn"
             android:padding="0dp"
             android:scaleType="fitCenter"
             android:src="@drawable/login_button" />
@@ -92,7 +93,7 @@
             android:layout_height="25dp"
             android:adjustViewBounds="true"
             android:background="@android:color/transparent"
-            
+            android:onClick="forgetPassword"
             android:padding="0dp"
             android:scaleType="fitCenter"
             android:src="@drawable/forgetpassword_letters" />

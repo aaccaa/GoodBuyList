@@ -24,6 +24,10 @@ public class SignInActivity extends Activity {
 		startActivity(intent2);
 	}
 	
+	public void forgetPassword(View view) {
+		Intent intent2 = new Intent(getApplicationContext(), ForgetPasswordActivity.class);
+		startActivity(intent2);
+	}
 	public void backPre(View view) {
 		Intent intent3 = new Intent(getApplicationContext(), MainActivity.class);
 		startActivity(intent3);
