@@ -12,14 +12,15 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="#006203" />
 
-    <ListView
-        android:id="@+id/listView1"
+        <ListView
+        android:id="@+id/favorite_list"
         android:layout_width="match_parent"
-        android:layout_height="366dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:layout_marginTop="10dp"
-        android:background="#FFFFFF" >
-    </ListView>
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:divider="#f2efdc"
+   		android:dividerHeight="4dp"
+             >
+        
+             </ListView>
 
 </LinearLayout>

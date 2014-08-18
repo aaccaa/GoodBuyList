@@ -6,111 +6,80 @@
     android:orientation="vertical" 
     tools:context=".PurchaseActivity" >
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:background="@drawable/purchaselist_bar" >
-
-         <ImageButton
-            android:id="@+id/imageButton4"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginBottom="3dp"
-            android:layout_marginLeft="1dp"
-            android:layout_marginRight="2dp"
-            android:layout_marginTop="3dp"
-            android:adjustViewBounds="true"
-            android:padding="0dp"
-            android:scaleType="fitCenter"
-            android:src="@drawable/cart_button" />
-
-        <ImageButton
-            android:id="@+id/imageButton3"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginBottom="3dp"
-            android:layout_marginLeft="1dp"
-            android:layout_marginRight="0dp"
-            android:layout_marginTop="3dp"
-            android:layout_toLeftOf="@+id/imageButton4"
-            android:adjustViewBounds="true"
-            android:padding="0dp"
-            android:scaleType="fitCenter"
-            android:src="@drawable/search_button"
-            android:onClick="searchproduct" />
-
-        <ImageButton
-            android:id="@+id/imageButton2"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginBottom="3dp"
-            android:layout_marginLeft="0dp"
-            android:layout_marginRight="1dp"
-            android:layout_marginTop="3dp"
-            android:layout_toRightOf="@+id/imageButton1"
-            android:adjustViewBounds="true"
-            android:padding="0dp"
-            android:scaleType="fitCenter"
-            android:src="@drawable/setting_button" />
+        android:layout_height="45dp"
+        android:background="@drawable/goodbuylist_bar"
+         android:orientation="horizontal"
+         android:gravity="right"
+          >
 
         <ImageButton
             android:id="@+id/imageButton1"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
             android:layout_marginBottom="3dp"
-            android:layout_marginLeft="3dp"
-            android:layout_marginRight="1dp"
+            android:layout_marginLeft="2dp"
             android:layout_marginTop="3dp"
             android:adjustViewBounds="true"
-            android:onClick="backPre"
+            android:onClick="searchproduct"
             android:padding="0dp"
             android:scaleType="fitCenter"
-            android:src="@drawable/back_button" />
-    </RelativeLayout>
+            android:src="@drawable/search_button" />
+
+        <ImageButton
+            android:id="@+id/imageButton2"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="3dp"
+            android:layout_marginTop="3dp"
+            android:adjustViewBounds="true"
+            android:padding="0dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/setting_button" 
+            android:onClick="goToMenu"/>
+        
+       
+    </LinearLayout>
     
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:background="#93c34e"
+        android:orientation="vertical"
+        android:gravity="right"
+         
          >
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/button1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentTop="true"
             android:background="@android:color/transparent"
             android:text="Edit Purchase"
             android:textColor="#006203"
-            android:textStyle="italic" />
-    </RelativeLayout>
+            android:textStyle="italic"
+            android:textSize="18sp" 
+            android:layout_gravity="center"
+            />
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#f2efdc"
         android:gravity="top|center"
+        android:background="#f2efdc"
         android:orientation="vertical" >
 
         <ListView
             android:id="@+id/listView1"
             android:layout_width="match_parent"
-            android:layout_height="366dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginTop="10dp"
-            android:background="#FFFFFF" >
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:divider="#f2efdc"
+   		 	android:dividerHeight="4dp"
+            
+            >
         </ListView>
     </LinearLayout>
 

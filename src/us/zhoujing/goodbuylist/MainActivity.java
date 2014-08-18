@@ -1,17 +1,16 @@
 package us.zhoujing.goodbuylist;
 
-import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileOutputStream;
-import java.io.IOException;
 import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.List;
 
 import us.zhoujing.goodbuylist.R;
+import us.zhoujing.goodbuylist.lib.HtmlParseUtil;
+import us.zhoujing.goodbuylist.lib.ProductListJSONParser;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.app.Activity;
@@ -23,19 +22,19 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
-import android.widget.ListView;
 import android.widget.SimpleAdapter;
-import android.widget.Toast;
 import android.widget.AdapterView.OnItemClickListener;
 
 public class MainActivity extends Activity {
 
-	GridView mListView;
+	GridView mGridView;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		
+		mGridView = (GridView) findViewById(R.id.lv_products);
 		
 		String strUrl = "http://goodbuylist.com/service/getListItemsJSON?listId=248";
 
@@ -43,15 +42,29 @@ public class MainActivity extends Activity {
 		downloadTask.execute(strUrl);
 
 	}
+/*	
+    @Override
+    protected void onDestroy() {
+    	super.onDestroy();
 
-	public void scanNow(View view) {
-		Intent intent = new Intent("com.google.zxing.client.android.SCAN");
-		intent.putExtra("com.google.zxing.client.android.SCAN.SCAN_MODE",
-				"QR_CODE_MODE");
-		startActivityForResult(intent, 0);
-		
-	}
+    	unbindDrawables(findViewById(R.id.RootView));
+    	System.gc();
+    }
 
+    private void unbindDrawables(View view) {
+        if (view.getBackground() != null) {
+        	view.getBackground().setCallback(null);
+        }
+       // if (view instanceof ViewGroup) {
+        if (view instanceof ViewGroup && !(view instanceof AdapterView))
+            for (int i = 0; i < ((ViewGroup) view).getChildCount(); i++) {
+            	unbindDrawables(((ViewGroup) view).getChildAt(i));
+            }
+        ((ViewGroup)view).removeAllViews();
+        }
+    }
+
+*/
 	public void signNow(View view) {
 		Intent nextScreen = new Intent(getApplicationContext(),
 				SignInActivity.class);
@@ -64,7 +77,15 @@ public class MainActivity extends Activity {
 		startActivity(nextScreen);
 	}
 
-	//For barcode scanning feature
+	public void scanNow(View view) {
+		Intent intent = new Intent("com.google.zxing.client.android.SCAN");
+		intent.putExtra("com.google.zxing.client.android.SCAN.SCAN_MODE",
+				"QR_CODE_MODE");
+		startActivityForResult(intent, 0);
+		
+	}
+
+	/* for barcode scanning feature
 	public void onActivityResult(int requestCode, int resultCode, Intent intent) {
 		if (requestCode == 0) {
 			if (resultCode == RESULT_OK) {
@@ -87,8 +108,9 @@ public class MainActivity extends Activity {
 		}
 
 	}
+	*/
 	
-	/** AsyncTask to download json data */
+	/* AsyncTask to download json data */
 	private class DownloadTask extends AsyncTask<String, Void, SimpleAdapter> {
 
 		List<HashMap<String, Object>> products;
@@ -96,7 +118,7 @@ public class MainActivity extends Activity {
 		@Override
 		protected SimpleAdapter doInBackground(String... url) {
 			try {
-				String data = ProductListJSONParser.downloadUrl(url[0]);
+				String data = HtmlParseUtil.getPageContent(url[0]);
 				ProductListJSONParser productListJSONParser = new ProductListJSONParser();
 				products = productListJSONParser.parse(data);
 			} catch (Exception e) {
@@ -106,15 +128,14 @@ public class MainActivity extends Activity {
 			String[] from = { "pic" };
 			int[] to = { R.id.iv_pic };
 			SimpleAdapter adapter = new SimpleAdapter(getBaseContext(),
-					products, R.layout.lv_product, from, to);
+					products, R.layout.main_product, from, to);
 			return adapter;
 		}
 
 		@Override
 		protected void onPostExecute(SimpleAdapter adapter) {
 
-			mListView = (GridView) findViewById(R.id.lv_products);
-			mListView.setAdapter(adapter);
+			mGridView.setAdapter(adapter);
 
 			OnItemClickListener mMessageClickedHandler = new OnItemClickListener() {
 				public void onItemClick(AdapterView parent, View v,
@@ -125,7 +146,7 @@ public class MainActivity extends Activity {
 				}
 			};
 
-			mListView.setOnItemClickListener(mMessageClickedHandler);
+			mGridView.setOnItemClickListener(mMessageClickedHandler);
 
 			for (int i = 0; i < adapter.getCount(); i++) {
 				HashMap<String, Object> hm = (HashMap<String, Object>) adapter
@@ -169,8 +190,6 @@ public class MainActivity extends Activity {
 				fOutStream.flush();
 				fOutStream.close();
 
-				// Create a hashmap object to store image path and its position
-				// in the listview
 				hmBitmap = new HashMap<String, Object>();
 
 				hmBitmap.put("pic", tmpFile.getPath());
@@ -186,10 +205,11 @@ public class MainActivity extends Activity {
 		@Override
 		protected void onPostExecute(HashMap<String, Object> result) {
 			// Getting the path to the downloaded image
+			
 			String path = (String) result.get("pic");
 			int position = (Integer) result.get("position");
 
-			SimpleAdapter adapter = (SimpleAdapter) mListView.getAdapter();
+			SimpleAdapter adapter = (SimpleAdapter) mGridView.getAdapter();
 
 			HashMap<String, Object> hm = (HashMap<String, Object>) adapter
 					.getItem(position);

@@ -23,9 +23,14 @@ public class FavoriteActivity extends FragmentActivity {
 		ft.commit();
 	}
 	
-	public void backPre(View view) {
-		Intent intent3 = new Intent(getApplicationContext(), SignInDoneActivity.class);
-		startActivity(intent3);
+	public void goToMenu(View view) {
+		Intent intent = new Intent(getApplicationContext(), SignInDoneActivity.class);
+		startActivity(intent);
+	}
+
+	public void searchproduct(View view) {
+		Intent intent = new Intent(getApplicationContext(), SearchActivity.class);
+		startActivity(intent);
 	}
 
 	public void onSelectFragment(View view) {

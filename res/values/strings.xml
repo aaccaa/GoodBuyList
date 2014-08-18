@@ -146,5 +146,7 @@
     <string name="_id_edittextpassword1">\@+id/editTextPassword1</string>
     <string name="title_activity_splash_fragment">SplashFragment</string>
     <string name="title_activity_forget_password">ForgetPasswordActivity</string>
+    <string name="title_activity_create_list">CreateListActivity</string>
+    <string name="title_activity_product_list">ProductListActivity</string>
 
 </resources>

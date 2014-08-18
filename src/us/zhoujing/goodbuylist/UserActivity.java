@@ -7,11 +7,20 @@ import android.view.Menu;
 import android.view.View;
 
 public class UserActivity extends Activity {
+	
+	String userId;
+	AppGoodbuylist myapp;
+	
+	
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_user_actvity);
+		
+		String userProfileUrl = "http://goodbuylist.com/user/viewProfile/userId/"
+				+ userId;
+		
 	}
 	
 	public void backPre(View view) {

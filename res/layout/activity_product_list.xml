@@ -1,0 +1,83 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="top|center"
+    android:orientation="vertical" 
+    tools:context=".PurchaseActivity" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@drawable/goodbuylist_bar"
+         android:orientation="horizontal"
+         android:gravity="right"
+          >
+
+        <ImageButton
+            android:id="@+id/imageButton1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="3dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginTop="3dp"
+            android:adjustViewBounds="true"
+            android:onClick="searchproduct"
+            android:padding="0dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/search_button" />
+
+        <ImageButton
+            android:id="@+id/imageButton2"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="3dp"
+            android:layout_marginTop="3dp"
+            android:adjustViewBounds="true"
+            android:padding="0dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/setting_button" 
+            android:onClick="goToMenu"/>
+        
+       
+    </LinearLayout>
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="#93c34e"
+        android:orientation="vertical"
+        android:gravity="right"
+         
+         >
+
+        <Button
+            android:id="@+id/button1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:text="Edit Item"
+            android:textColor="#006203"
+            android:textStyle="italic"
+            android:textSize="18sp"  />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="top|center"
+        android:background="#f2efdc"
+        android:orientation="vertical" >
+
+        <ListView
+            android:id="@+id/listView1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:divider="#f2efdc"
+   		 	android:dividerHeight="4dp"
+            >
+        </ListView>
+    </LinearLayout>
+
+</LinearLayout>
