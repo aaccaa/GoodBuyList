@@ -88,8 +88,8 @@ public class SignInDoneActivity extends Activity {
 	}
 	
 	public void searchproduct(View view) {
-		Intent intent3 = new Intent(getApplicationContext(), SearchActivity.class);
-		startActivity(intent3);
+		Intent intent = new Intent(getApplicationContext(), SearchActivity.class);
+		startActivity(intent);
 	}
 
 	@Override

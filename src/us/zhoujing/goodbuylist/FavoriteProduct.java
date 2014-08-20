@@ -58,6 +58,7 @@ public class FavoriteProduct extends Fragment{
 		ListView mListView;
         Activity mContex;
         ProgressDialog progDailog = new ProgressDialog(getActivity());
+        SimpleAdapter adapter = null;
 
         
         private  DownloadTask(Activity contex,ListView listview)
@@ -82,6 +83,9 @@ public class FavoriteProduct extends Fragment{
 		protected SimpleAdapter doInBackground(String... url) {
 			try {
 				String data = HtmlParseUtil.getPageContent(url[0],url[1]);
+				if (data.equals("0")){
+					return adapter;
+				}
 				products = HtmlParseUtil.ParseFavorList(data);
 				Log.e("tag", "done parsing" + products.size());
 			} catch (Exception e) {
@@ -99,6 +103,13 @@ public class FavoriteProduct extends Fragment{
 		@Override
 		protected void onPostExecute(SimpleAdapter adapter) {
 
+			if (adapter == null){
+				Intent intent = new Intent(mContex, SignInActivity.class);
+		        intent.putExtra("finish", true);
+		        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP); // To clean up all activities
+		        startActivity(intent);
+			}
+			else{
 			mListView.setAdapter(adapter);
 
 			OnItemClickListener mMessageClickedHandler = new OnItemClickListener() {
@@ -126,7 +137,7 @@ public class FavoriteProduct extends Fragment{
 			}
 			
 			progDailog.dismiss();
-
+			}
 		}
 	}
 

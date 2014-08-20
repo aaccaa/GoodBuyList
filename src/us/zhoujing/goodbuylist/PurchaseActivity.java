@@ -67,7 +67,7 @@ public class PurchaseActivity extends Activity {
 
 		List<HashMap<String, Object>> products;
 		ProgressDialog progDailog = new ProgressDialog(PurchaseActivity.this);
-        
+		SimpleAdapter adapter = null;
 		
 		@Override
         protected void onPreExecute() {
@@ -83,6 +83,9 @@ public class PurchaseActivity extends Activity {
 		protected SimpleAdapter doInBackground(String... url) {
 			try {
 				String data = HtmlParseUtil.getPageContent(url[0],url[1]);
+				if (data.equals("0")){
+					return adapter;
+				}
 				products = HtmlParseUtil.ParsePurchaseList(data);
 				Log.e("tag", "done parsing" + products.size());
 			} catch (Exception e) {
@@ -91,7 +94,7 @@ public class PurchaseActivity extends Activity {
 
 			String[] from = { "pic", "listname", "totalnum" };
 			int[] to = { R.id.iv_pic, R.id.tv_product_details1, R.id.tv_product_details2 };
-			SimpleAdapter adapter = new SimpleAdapter(getBaseContext(),
+			adapter = new SimpleAdapter(getBaseContext(),
 					products, R.layout.lv_product, from, to);
 			Log.e("tag","new adapter");
 			return adapter;
@@ -100,6 +103,13 @@ public class PurchaseActivity extends Activity {
 		@Override
 		protected void onPostExecute(SimpleAdapter adapter) {
 
+			if (adapter == null){
+				Intent intent = new Intent(getApplicationContext(), SignInActivity.class);
+		        intent.putExtra("finish", true);
+		        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP); // To clean up all activities
+		        startActivity(intent);
+			}
+			else{
 			mListView.setAdapter(adapter);
 
 			OnItemClickListener mMessageClickedHandler = new OnItemClickListener() {
@@ -127,7 +137,7 @@ public class PurchaseActivity extends Activity {
 			}
 			
 			progDailog.dismiss();
-
+			}
 		}
 	}
 

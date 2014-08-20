@@ -126,7 +126,13 @@ public class HtmlParseUtil {
 					.openConnection();
 			urlConnection.connect();
 			InputStream iStream = urlConnection.getInputStream();
-			data = getStringByInputsream(iStream);
+			String temp_data = getStringByInputsream(iStream);
+			if (temp_data.contains("social-buttons.css")){
+				data = "0";
+			}
+			else{
+				data = temp_data;
+			}
 
 		} catch (Exception e) {
 			Log.d("Exception while downloading url", e.toString());
@@ -148,7 +154,14 @@ public class HtmlParseUtil {
 			HttpResponse httpResponse = httpClient.execute(post);
 			HttpEntity httpEntity = httpResponse.getEntity();
 			InputStream iStream = httpEntity.getContent();
-			data = getStringByInputsream(iStream);
+			String temp_data = getStringByInputsream(iStream);
+			if (temp_data.contains("social-buttons.css")){
+				data = "0";
+			}
+			else{
+				data = temp_data;
+			}
+			
 			
 			/* to check header details
 			Header[] header = httpResponse.getAllHeaders();

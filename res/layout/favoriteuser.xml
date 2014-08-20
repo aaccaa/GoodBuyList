@@ -11,6 +11,15 @@
         android:text="favorite user"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="#006203" />
+    
+          <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="This page is under construction" 
+        style="@style/brownCodeFont"
+        />
 
     <ListView
         android:id="@+id/listView1"

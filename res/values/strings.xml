@@ -148,5 +148,6 @@
     <string name="title_activity_forget_password">ForgetPasswordActivity</string>
     <string name="title_activity_create_list">CreateListActivity</string>
     <string name="title_activity_product_list">ProductListActivity</string>
+    <string name="title_activity_sign_up">SignUpActivity</string>
 
 </resources>

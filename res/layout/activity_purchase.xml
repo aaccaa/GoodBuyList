@@ -9,7 +9,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="45dp"
-        android:background="@drawable/goodbuylist_bar"
+        android:background="@drawable/purchaselist_bar"
          android:orientation="horizontal"
          android:gravity="right"
           >
@@ -46,7 +46,7 @@
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:background="#93c34e"
-        android:orientation="vertical"
+        android:orientation="horizontal"
         android:gravity="right"
          
          >

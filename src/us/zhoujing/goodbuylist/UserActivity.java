@@ -23,9 +23,14 @@ public class UserActivity extends Activity {
 		
 	}
 	
-	public void backPre(View view) {
-		Intent intent1 = new Intent(getApplicationContext(), SignInDoneActivity.class);
-		startActivity(intent1);
+	public void goToMenu(View view) {
+		Intent intent = new Intent(getApplicationContext(), SignInDoneActivity.class);
+		startActivity(intent);
+	}
+
+	public void searchproduct(View view) {
+		Intent intent = new Intent(getApplicationContext(), SearchActivity.class);
+		startActivity(intent);
 	}
 
 

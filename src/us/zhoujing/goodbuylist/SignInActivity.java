@@ -64,6 +64,12 @@ public class SignInActivity extends Activity {
 		startActivity(intent);
 	}
 	
+	public void signup(View view) {
+		Intent intent = new Intent(getApplicationContext(), SignUpActivity.class);
+		startActivity(intent);
+	}
+
+	
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {

@@ -2,7 +2,9 @@ package us.zhoujing.goodbuylist;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.Intent;
 import android.view.Menu;
+import android.view.View;
 
 public class CreateListActivity extends Activity {
 
@@ -11,6 +13,17 @@ public class CreateListActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_create_list);
 	}
+	
+	public void goToMenu(View view) {
+		Intent intent = new Intent(getApplicationContext(), SignInDoneActivity.class);
+		startActivity(intent);
+	}
+
+	public void searchproduct(View view) {
+		Intent intent = new Intent(getApplicationContext(), SearchActivity.class);
+		startActivity(intent);
+	}
+
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
