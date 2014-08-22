@@ -42,29 +42,7 @@ public class MainActivity extends Activity {
 		downloadTask.execute(strUrl);
 
 	}
-/*	
-    @Override
-    protected void onDestroy() {
-    	super.onDestroy();
 
-    	unbindDrawables(findViewById(R.id.RootView));
-    	System.gc();
-    }
-
-    private void unbindDrawables(View view) {
-        if (view.getBackground() != null) {
-        	view.getBackground().setCallback(null);
-        }
-       // if (view instanceof ViewGroup) {
-        if (view instanceof ViewGroup && !(view instanceof AdapterView))
-            for (int i = 0; i < ((ViewGroup) view).getChildCount(); i++) {
-            	unbindDrawables(((ViewGroup) view).getChildAt(i));
-            }
-        ((ViewGroup)view).removeAllViews();
-        }
-    }
-
-*/
 	public void signNow(View view) {
 		Intent nextScreen = new Intent(getApplicationContext(),
 				SignInActivity.class);
@@ -77,39 +55,6 @@ public class MainActivity extends Activity {
 		startActivity(nextScreen);
 	}
 
-	public void scanNow(View view) {
-		Intent intent = new Intent("com.google.zxing.client.android.SCAN");
-		intent.putExtra("com.google.zxing.client.android.SCAN.SCAN_MODE",
-				"QR_CODE_MODE");
-		startActivityForResult(intent, 0);
-		
-	}
-
-	/* for barcode scanning feature
-	public void onActivityResult(int requestCode, int resultCode, Intent intent) {
-		if (requestCode == 0) {
-			if (resultCode == RESULT_OK) {
-				String contents = intent.getStringExtra("SCAN_RESULT");
-				String format = intent.getStringExtra("SCAN_RESULT_FORMAT");
-				Log.i("xZing", "contents: " + contents + " format: " + format);
-				
-				Intent nextScreen = new Intent(getApplicationContext(),
-						ProductActivity.class);
-				nextScreen.putExtra("barcode", contents);
-				// nextScreen.putExtra("email",
-				// inputEmail.getText().toString());
-				// Log.e("n", inputName.getText()+"."+ inputEmail.getText());
-				startActivity(nextScreen);
-
-			} else if (resultCode == RESULT_CANCELED) {
-				// Handle cancel
-				Log.i("xZing", "Cancelled");
-			}
-		}
-
-	}
-	*/
-	
 	/* AsyncTask to download json data */
 	private class DownloadTask extends AsyncTask<String, Void, SimpleAdapter> {
 

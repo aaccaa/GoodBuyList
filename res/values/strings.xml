@@ -149,5 +149,6 @@
     <string name="title_activity_create_list">CreateListActivity</string>
     <string name="title_activity_product_list">ProductListActivity</string>
     <string name="title_activity_sign_up">SignUpActivity</string>
+    <string name="title_activity_search_result">SearchResultActivity</string>
 
 </resources>

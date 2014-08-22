@@ -18,7 +18,9 @@ import us.zhoujing.goodbuylist.R;
 
 import android.util.Log;
 
-/** A class to parse json data */
+// A class to parse json data 
+// Currently Goodbuylist server return Html format
+
 public class ProductListJSONParser {
 
 	// Receives a JSONObject and returns a list

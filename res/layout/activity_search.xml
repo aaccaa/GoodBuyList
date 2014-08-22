@@ -4,78 +4,80 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".SearchActivity" >
-    
-        <RelativeLayout
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:background="@drawable/search_bar" >
+        android:layout_height="45dp"
+        android:background="@drawable/search_bar"
+        android:gravity="right"
+        android:orientation="horizontal" >
 
+           <!-- used for barcode scanning -->
+        
         <ImageButton
-            android:id="@+id/imageButton4"
+            android:id="@+id/imageButton1"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentTop="true"
             android:layout_marginBottom="3dp"
             android:layout_marginLeft="1dp"
-            android:layout_marginRight="2dp"
             android:layout_marginTop="3dp"
             android:adjustViewBounds="true"
+            android:onClick="scanNow"
             android:padding="0dp"
             android:scaleType="fitCenter"
-            android:src="@drawable/cart_button" />
-
-        <ImageButton
-            android:id="@+id/imageButton3"
+            android:src="@drawable/search_green_button" />
+        
+                <TextView
+            android:id="@+id/textView1"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginBottom="3dp"
-            android:layout_marginLeft="1dp"
-            android:layout_marginRight="0dp"
-            android:layout_marginTop="3dp"
-            android:layout_toLeftOf="@+id/imageButton4"
-            android:adjustViewBounds="true"
-            android:padding="0dp"
-            android:scaleType="fitCenter"
-            android:src="@drawable/search_button"
-            />
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+             />
+        
 
         <ImageButton
             android:id="@+id/imageButton2"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentTop="true"
             android:layout_marginBottom="3dp"
-            android:layout_marginLeft="0dp"
-            android:layout_marginRight="1dp"
             android:layout_marginTop="3dp"
-            android:layout_toRightOf="@+id/imageButton1"
             android:adjustViewBounds="true"
+            android:onClick="goToMenu"
             android:padding="0dp"
             android:scaleType="fitCenter"
             android:src="@drawable/setting_button" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@drawable/search_bar"
+        android:gravity="right"
+        android:orientation="horizontal" >
+
+        <EditText
+            android:id="@+id/editTextPassword1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_marginBottom="3dp"
+            android:layout_marginTop="3dp"
+            
+            android:background="@drawable/round_edit"
+            android:hint="  Products, Lists, Users... " />
 
         <ImageButton
-            android:id="@+id/imageButton1"
+            android:id="@+id/imageButton2"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
             android:layout_marginBottom="3dp"
-            android:layout_marginLeft="3dp"
-            android:layout_marginRight="1dp"
             android:layout_marginTop="3dp"
             android:adjustViewBounds="true"
-            android:onClick="backPre"
+            android:onClick="goToMenu"
             android:padding="0dp"
             android:scaleType="fitCenter"
-            android:src="@drawable/back_button" /> </RelativeLayout>
-    
+            android:src="@drawable/search_button" />
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -89,11 +91,10 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:onClick="onSelectFragment"
-            android:text="Categories" 
+            android:text="Categories"
             android:textColor="#006203"
-        android:textStyle="italic"
-         android:typeface="serif"
-        />
+            android:textStyle="italic"
+            android:typeface="serif" />
 
         <Button
             android:id="@+id/btsearchmost"
@@ -101,24 +102,21 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:onClick="onSelectFragment"
-            android:text="most followed" 
+            android:text="most followed"
             android:textColor="#006203"
-        android:textStyle="italic"
-       android:typeface="serif"
-        />
-        
-         <Button
+            android:textStyle="italic"
+            android:typeface="serif" />
+
+        <Button
             android:id="@+id/btsearchatoz"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:onClick="onSelectFragment"
-            android:text="A to Z" 
+            android:text="A to Z"
             android:textColor="#006203"
-        android:textStyle="italic"
-         android:typeface="serif"
-        />
-         
+            android:textStyle="italic"
+            android:typeface="serif" />
     </LinearLayout>
 
     <LinearLayout

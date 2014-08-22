@@ -61,6 +61,7 @@
             android:textStyle="italic"
             android:textSize="18sp" 
             android:layout_gravity="center"
+            android:layout_marginRight="5dp"
             />
     </LinearLayout>
 

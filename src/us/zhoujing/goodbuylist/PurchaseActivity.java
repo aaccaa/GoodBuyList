@@ -87,7 +87,7 @@ public class PurchaseActivity extends Activity {
 					return adapter;
 				}
 				products = HtmlParseUtil.ParsePurchaseList(data);
-				Log.e("tag", "done parsing" + products.size());
+				
 			} catch (Exception e) {
 				Log.d("Background Task", e.toString());
 			}

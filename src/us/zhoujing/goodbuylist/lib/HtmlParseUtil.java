@@ -84,6 +84,7 @@ public class HtmlParseUtil {
 		return result;
 	}
 
+	//convert Inputstream to String
 	public static String getStringByInputsream(InputStream iStream) throws IOException{
 		String data = "";
 		BufferedReader br = new BufferedReader(new InputStreamReader(
@@ -155,6 +156,8 @@ public class HtmlParseUtil {
 			HttpEntity httpEntity = httpResponse.getEntity();
 			InputStream iStream = httpEntity.getContent();
 			String temp_data = getStringByInputsream(iStream);
+			
+			//if cookies expired, server redirect to login page
 			if (temp_data.contains("social-buttons.css")){
 				data = "0";
 			}
@@ -163,13 +166,6 @@ public class HtmlParseUtil {
 			}
 			
 			
-			/* to check header details
-			Header[] header = httpResponse.getAllHeaders();
-			for (int i = 0; i < header.length; i++)
-				data1 = data1 + " " + header[i].toString();
-			Log.e("hearder length = ", ((Integer) header.length).toString());
-			Log.e("hearder  = ", data1);
-			 */
 		} catch (UnsupportedEncodingException e) {
 			e.printStackTrace();
 		} catch (ClientProtocolException e) {
@@ -186,7 +182,6 @@ public class HtmlParseUtil {
 		List<HashMap<String, Object>> productList = new ArrayList<HashMap<String, Object>>();
 
 		Document doc = Jsoup.parse(strHtml);
-	//	Document doc = Jsoup.connect(strHtml).get();
 		Elements items = doc.select("div[class=briefItem menuBar]");
 
 		for (Element item : items) {
@@ -237,7 +232,7 @@ public class HtmlParseUtil {
 		return productList;
 	}
     
-    //// parse http://goodbuylist.com/user/viewProductLists/userId/xxx to followed list
+    // parse http://goodbuylist.com/user/viewProductLists/userId/xxx to followed list
     public static List<HashMap<String, Object>> ParseFavorList(String strHtml) throws IOException {
 		List<HashMap<String, Object>> productList = new ArrayList<HashMap<String, Object>>();
 
@@ -277,7 +272,7 @@ public class HtmlParseUtil {
 		return productList;
 	}
     
-    //// parse http://goodbuylist.com/user/viewProductLists/userId/xxx to purchase list
+    // parse http://goodbuylist.com/user/viewProductLists/userId/xxx to purchase list
     public static List<HashMap<String, Object>> ParsePurchaseList(String strHtml) throws IOException {
 		List<HashMap<String, Object>> productList = new ArrayList<HashMap<String, Object>>();
 

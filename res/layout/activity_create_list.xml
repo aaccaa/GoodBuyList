@@ -55,7 +55,8 @@
             android:text="Create New List"
             android:textColor="#006203"
             android:textSize="18sp"
-            android:textStyle="italic" />
+            android:textStyle="italic"
+            android:layout_marginRight="5dp" />
     </LinearLayout>
 
     <TextView

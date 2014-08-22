@@ -37,7 +37,6 @@ public class ProductListActivity extends Activity {
 		String[] input = new String[2];
 		input[0] = myapp.getCookie();
 		input[1] = url;
-		Log.e("tag", url);
 		mListView = (ListView) findViewById(R.id.listView1);
 
 		DownloadTask downloadTask = new DownloadTask();

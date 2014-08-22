@@ -13,6 +13,4 @@ public class FavoriteUser extends Fragment {
 		return inflater.inflate(R.layout.favoriteuser, container, false);
 	}
 
-
-
 }

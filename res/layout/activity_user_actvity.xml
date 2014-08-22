@@ -60,7 +60,11 @@
             android:background="@android:color/transparent"
             android:text="Edit"
             android:textColor="#006203"
-            android:textStyle="italic" />
+            android:textStyle="italic" 
+            android:textSize="18sp" 
+            android:layout_gravity="center"
+            android:layout_marginRight="5dp"
+            />
     </LinearLayout>
 
     <LinearLayout

@@ -39,11 +39,13 @@
         </activity>
         <activity
             android:name="us.zhoujing.goodbuylist.SignInActivity"
-            android:label="@string/title_activity_sign_in" >
+            android:label="@string/title_activity_sign_in"
+            android:windowSoftInputMode="stateHidden" >
         </activity>
         <activity
             android:name="us.zhoujing.goodbuylist.SearchActivity"
-            android:label="@string/title_activity_search" >
+            android:label="@string/title_activity_search"
+            android:windowSoftInputMode="stateHidden" >
         </activity>
         <activity
             android:name="us.zhoujing.goodbuylist.SignInDoneActivity"
@@ -113,6 +115,10 @@
         <activity
             android:name="us.zhoujing.goodbuylist.SignUpActivity"
             android:label="@string/title_activity_sign_up" >
+        </activity>
+        <activity
+            android:name="us.zhoujing.goodbuylist.SearchResultActivity"
+            android:label="@string/title_activity_search_result" >
         </activity>
     </application>
 

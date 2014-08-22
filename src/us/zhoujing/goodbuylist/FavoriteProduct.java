@@ -9,7 +9,6 @@ import java.util.HashMap;
 import java.util.List;
 
 import us.zhoujing.goodbuylist.lib.HtmlParseUtil;
-import us.zhoujing.goodbuylist.lib.ProductListJSONParser;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -43,7 +42,6 @@ public class FavoriteProduct extends Fragment{
 		String[] input = new String[2];
 		input[0] = myapp.getCookie();
 		input[1] = "http://goodbuylist.com/user/viewProductLists/userId/" + myapp.getUserId();
-		Log.e("tag", input[1]);
 		mListView = (ListView)rootView.findViewById(R.id.favorite_list);
 		
 		DownloadTask downloadTask = new DownloadTask(getActivity(), mListView);
@@ -60,16 +58,13 @@ public class FavoriteProduct extends Fragment{
         ProgressDialog progDailog = new ProgressDialog(getActivity());
         SimpleAdapter adapter = null;
 
-        
         private  DownloadTask(Activity contex,ListView listview)
         {
          this.mContex=contex;
          this.mListView=listview;
         }
         
-        
-		
-		@Override
+        @Override
         protected void onPreExecute() {
             super.onPreExecute();
             progDailog.setMessage("Loading...");
@@ -87,8 +82,7 @@ public class FavoriteProduct extends Fragment{
 					return adapter;
 				}
 				products = HtmlParseUtil.ParseFavorList(data);
-				Log.e("tag", "done parsing" + products.size());
-			} catch (Exception e) {
+				} catch (Exception e) {
 				Log.d("Background Task", e.toString());
 			}
 
@@ -125,7 +119,6 @@ public class FavoriteProduct extends Fragment{
 				}
 			};
 			
-
 			mListView.setOnItemClickListener(mMessageClickedHandler);
 
 			for (int i = 0; i < adapter.getCount(); i++) {
@@ -195,8 +188,6 @@ public class FavoriteProduct extends Fragment{
 
 		@Override
 		protected void onPostExecute(HashMap<String, Object> result) {
-			// Getting the path to the downloaded image
-			
 			String path = (String) result.get("pic");
 			int position = (Integer) result.get("position");
 
