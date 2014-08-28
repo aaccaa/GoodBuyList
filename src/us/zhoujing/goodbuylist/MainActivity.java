@@ -14,6 +14,7 @@ import us.zhoujing.goodbuylist.lib.ProductListJSONParser;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -59,7 +60,8 @@ public class MainActivity extends Activity {
 	private class DownloadTask extends AsyncTask<String, Void, SimpleAdapter> {
 
 		List<HashMap<String, Object>> products;
-
+		Boolean flag = false;
+		
 		@Override
 		protected SimpleAdapter doInBackground(String... url) {
 			try {
@@ -68,18 +70,24 @@ public class MainActivity extends Activity {
 				products = productListJSONParser.parse(data);
 			} catch (Exception e) {
 				Log.d("Background Task", e.toString());
+				Log.e("json", "parse failed");
+				flag = true;
 			}
-
+			SimpleAdapter adapter = null;
+			if(!flag){
 			String[] from = { "pic" };
 			int[] to = { R.id.iv_pic };
-			SimpleAdapter adapter = new SimpleAdapter(getBaseContext(),
+			adapter = new SimpleAdapter(getBaseContext(),
 					products, R.layout.main_product, from, to);
+			Log.e("adaptercount", ((Integer)adapter.getCount()).toString());
+			}
 			return adapter;
 		}
 
 		@Override
 		protected void onPostExecute(SimpleAdapter adapter) {
 
+			if(adapter != null){
 			mGridView.setAdapter(adapter);
 
 			OnItemClickListener mMessageClickedHandler = new OnItemClickListener() {
@@ -100,7 +108,13 @@ public class MainActivity extends Activity {
 				ImageLoaderTask imageLoaderTask = new ImageLoaderTask();
 				imageLoaderTask.execute(hm);
 			}
-
+			}
+			else {
+				AlertDialog.Builder builder = new AlertDialog.Builder(
+						MainActivity.this);
+				builder.setMessage("Cannot access internet...");
+				builder.show();
+			}
 		}
 	}
 
